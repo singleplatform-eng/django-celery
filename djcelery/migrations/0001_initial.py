@@ -46,7 +46,7 @@ class Migration(migrations.Migration):
             name='PeriodicTask',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('name', models.CharField(help_text='Useful description', unique=True, max_length=200, verbose_name='name')),
+                ('name', models.CharField(help_text='Useful description', unique=True, max_length=191, verbose_name='name')),
                 ('task', models.CharField(max_length=200, verbose_name='task name')),
                 ('args', models.TextField(default='[]', help_text='JSON encoded positional arguments', verbose_name='Arguments', blank=True)),
                 ('kwargs', models.TextField(default='{}', help_text='JSON encoded keyword arguments', verbose_name='Keyword arguments', blank=True)),
@@ -82,7 +82,7 @@ class Migration(migrations.Migration):
             name='TaskMeta',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('task_id', models.CharField(unique=True, max_length=255, verbose_name='task id')),
+                ('task_id', models.CharField(unique=True, max_length=191, verbose_name='task id')),
                 ('status', models.CharField(default='PENDING', max_length=50, verbose_name='state', choices=[('FAILURE', 'FAILURE'), ('PENDING', 'PENDING'), ('RECEIVED', 'RECEIVED'), ('RETRY', 'RETRY'), ('REVOKED', 'REVOKED'), ('STARTED', 'STARTED'), ('SUCCESS', 'SUCCESS')])),
                 ('result', djcelery.picklefield.PickledObjectField(default=None, null=True, editable=False)),
                 ('date_done', models.DateTimeField(auto_now=True, verbose_name='done at')),
@@ -101,7 +101,7 @@ class Migration(migrations.Migration):
             name='TaskSetMeta',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('taskset_id', models.CharField(unique=True, max_length=255, verbose_name='group id')),
+                ('taskset_id', models.CharField(unique=True, max_length=191, verbose_name='group id')),
                 ('result', djcelery.picklefield.PickledObjectField(editable=False)),
                 ('date_done', models.DateTimeField(auto_now=True, verbose_name='created at')),
                 ('hidden', models.BooleanField(default=False, db_index=True, editable=False)),
@@ -119,7 +119,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('state', models.CharField(db_index=True, max_length=64, verbose_name='state', choices=[('FAILURE', 'FAILURE'), ('PENDING', 'PENDING'), ('RECEIVED', 'RECEIVED'), ('RETRY', 'RETRY'), ('REVOKED', 'REVOKED'), ('STARTED', 'STARTED'), ('SUCCESS', 'SUCCESS')])),
                 ('task_id', models.CharField(unique=True, max_length=36, verbose_name='UUID')),
-                ('name', models.CharField(max_length=200, null=True, verbose_name='name', db_index=True)),
+                ('name', models.CharField(max_length=191, null=True, verbose_name='name', db_index=True)),
                 ('tstamp', models.DateTimeField(verbose_name='event received at', db_index=True)),
                 ('args', models.TextField(null=True, verbose_name='Arguments')),
                 ('kwargs', models.TextField(null=True, verbose_name='Keyword arguments')),
@@ -143,7 +143,7 @@ class Migration(migrations.Migration):
             name='WorkerState',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('hostname', models.CharField(unique=True, max_length=255, verbose_name='hostname')),
+                ('hostname', models.CharField(unique=True, max_length=191, verbose_name='hostname')),
                 ('last_heartbeat', models.DateTimeField(null=True, verbose_name='last heartbeat', db_index=True)),
             ],
             options={
