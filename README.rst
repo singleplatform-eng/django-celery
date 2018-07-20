@@ -1,3 +1,5 @@
+![Build Status](https://codebuild.us-east-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiRTZFS0hqVitDUXpBVmN2NUtwYUc1NFdmQ2dhUlByOThIV0pJc29PQlZVY1gyVHF6MXJ6M2ZqcE8xWUhTZ1NPbmo2S2hWUWpEL1NTM3lPcUJCSXBTQjB3PSIsIml2UGFyYW1ldGVyU3BlYyI6IjloaXdFcURUVy9tbDFsdzMiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=master)
+
 ===============================================
  django-celery - Celery Integration for Django
 ===============================================
