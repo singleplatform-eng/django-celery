@@ -14,7 +14,7 @@ phases:
       - pip install --upgrade wheel setuptools piprepo
   build:
     commands:
-      - python setup.py bdist_wheel
+      - python setup.py check sdist bdist_wheel
   post_build:
     commands:
       - piprepo sync dist s3://$PIP_REPO
