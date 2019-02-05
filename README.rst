@@ -1,7 +1,3 @@
-.. image:: https://codebuild.us-east-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoibG5aZUhIZElNTjRkNHJ5ejBpZ3MwMUQrT1RtalA2bENYaGwybUYxNDlDN1JBdTJOb2Y3cSttM0dZZHFPOXAzWjRqWjdTVXVCVE1mVHdmV0sxSEU2UU9zPSIsIml2UGFyYW1ldGVyU3BlYyI6IjhvM0tVc3NmR1JFM01jY0kiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=master
-   :target: https://console.aws.amazon.com/codebuild/home?region=us-east-1#/projects/vendored_django-celery/view
-   :alt: Build Status
-
 ===============================================
  django-celery - Celery Integration for Django
 ===============================================
